@@ -1,10 +1,12 @@
 package com.project.server;
 
-import java.util.List;
+
+import java.util.ArrayList;
+
 
 public class Repository {
 
-	private List<Car> Cars;
+	private ArrayList<Car> Cars =new ArrayList<Car>();
 	private Car car;
 	
 	public boolean AddCar(Car car) {
@@ -24,7 +26,7 @@ public class Repository {
 		return null;
 		
 	}
-	public List<Car>getAllCars(){
+	public ArrayList<Car>getAllCars(){
 		return Cars;
 	}
 }

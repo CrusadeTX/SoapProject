@@ -1143,42 +1143,186 @@ import com.project.server.CarService;
             
 
                         /**
-                        * field for Car
+                        * field for LicensePlate
                         */
 
                         
-                                    protected Car localCar ;
+                                    protected java.lang.String localLicensePlate ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localCarTracker = false ;
+                           protected boolean localLicensePlateTracker = false ;
 
-                           public boolean isCarSpecified(){
-                               return localCarTracker;
+                           public boolean isLicensePlateSpecified(){
+                               return localLicensePlateTracker;
                            }
 
                            
 
                            /**
                            * Auto generated getter method
-                           * @return Car
+                           * @return java.lang.String
                            */
-                           public  Car getCar(){
-                               return localCar;
+                           public  java.lang.String getLicensePlate(){
+                               return localLicensePlate;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Car
+                               * @param param LicensePlate
                                */
-                               public void setCar(Car param){
-                            localCarTracker = true;
+                               public void setLicensePlate(java.lang.String param){
+                            localLicensePlateTracker = true;
                                    
-                                            this.localCar=param;
+                                            this.localLicensePlate=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for Make
+                        */
+
+                        
+                                    protected java.lang.String localMake ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localMakeTracker = false ;
+
+                           public boolean isMakeSpecified(){
+                               return localMakeTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getMake(){
+                               return localMake;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Make
+                               */
+                               public void setMake(java.lang.String param){
+                            localMakeTracker = true;
+                                   
+                                            this.localMake=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for Model
+                        */
+
+                        
+                                    protected java.lang.String localModel ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localModelTracker = false ;
+
+                           public boolean isModelSpecified(){
+                               return localModelTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getModel(){
+                               return localModel;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Model
+                               */
+                               public void setModel(java.lang.String param){
+                            localModelTracker = true;
+                                   
+                                            this.localModel=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for Weight
+                        */
+
+                        
+                                    protected int localWeight ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getWeight(){
+                               return localWeight;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Weight
+                               */
+                               public void setWeight(int param){
+                            
+                                            this.localWeight=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for Displacement
+                        */
+
+                        
+                                    protected int localDisplacement ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getDisplacement(){
+                               return localDisplacement;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Displacement
+                               */
+                               public void setDisplacement(int param){
+                            
+                                            this.localDisplacement=param;
                                        
 
                                }
@@ -1242,19 +1386,87 @@ import com.project.server.CarService;
 
                
                    }
-                if (localCarTracker){
-                                    if (localCar==null){
+                if (localLicensePlateTracker){
+                                    namespace = "http://server.project.com";
+                                    writeStartElement(null, namespace, "LicensePlate", xmlWriter);
+                             
 
-                                        writeStartElement(null, "http://server.project.com", "car", xmlWriter);
+                                          if (localLicensePlate==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
 
-                                       // write the nil attribute
-                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                      xmlWriter.writeEndElement();
-                                    }else{
-                                     localCar.serialize(new javax.xml.namespace.QName("http://server.project.com","car"),
-                                        xmlWriter);
-                                    }
-                                }
+                                        
+                                                   xmlWriter.writeCharacters(localLicensePlate);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localMakeTracker){
+                                    namespace = "http://server.project.com";
+                                    writeStartElement(null, namespace, "Make", xmlWriter);
+                             
+
+                                          if (localMake==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localMake);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localModelTracker){
+                                    namespace = "http://server.project.com";
+                                    writeStartElement(null, namespace, "Model", xmlWriter);
+                             
+
+                                          if (localModel==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localModel);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                                    namespace = "http://server.project.com";
+                                    writeStartElement(null, namespace, "Weight", xmlWriter);
+                             
+                                               if (localWeight==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("Weight cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localWeight));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://server.project.com";
+                                    writeStartElement(null, namespace, "Displacement", xmlWriter);
+                             
+                                               if (localDisplacement==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("Displacement cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDisplacement));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -1439,14 +1651,37 @@ import com.project.server.CarService;
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                 if (localCarTracker){
-                            elementList.add(new javax.xml.namespace.QName("http://server.project.com",
-                                                                      "car"));
+                 if (localLicensePlateTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://server.project.com",
+                                                                      "LicensePlate"));
+                                 
+                                         elementList.add(localLicensePlate==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLicensePlate));
+                                    } if (localMakeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://server.project.com",
+                                                                      "Make"));
+                                 
+                                         elementList.add(localMake==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMake));
+                                    } if (localModelTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://server.project.com",
+                                                                      "Model"));
+                                 
+                                         elementList.add(localModel==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localModel));
+                                    }
+                                      elementList.add(new javax.xml.namespace.QName("http://server.project.com",
+                                                                      "Weight"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localWeight));
                             
+                                      elementList.add(new javax.xml.namespace.QName("http://server.project.com",
+                                                                      "Displacement"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDisplacement));
                             
-                                    elementList.add(localCar==null?null:
-                                    localCar);
-                                }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -1525,27 +1760,137 @@ import com.project.server.CarService;
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://server.project.com","car").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://server.project.com","LicensePlate").equals(reader.getName())){
                                 
-                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                          object.setCar(null);
-                                          reader.next();
-                                            
-                                            reader.next();
-                                          
-                                      }else{
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
                                     
-                                                object.setCar(Car.Factory.parse(reader));
-                                              
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setLicensePlate(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
                                         reader.next();
-                                    }
+                                    
                               }  // End of if for expected property start element
                                 
                                     else {
                                         
                                     }
-                                  
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://server.project.com","Make").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setMake(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://server.project.com","Model").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setModel(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://server.project.com","Weight").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"Weight" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setWeight(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://server.project.com","Displacement").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"Displacement" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setDisplacement(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                              
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             
