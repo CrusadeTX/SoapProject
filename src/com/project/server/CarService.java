@@ -1,20 +1,19 @@
 package com.project.server;
-import java.util.ArrayList;
+import java.util.List;
 
 
 public class CarService {
 	public Repository repo = new Repository();
 
-	public boolean AddCar(String LicensePlate, String Make, String Model, int Weight, int Displacement) {
-		Car car = new Car(LicensePlate,Make,Model,Weight,Displacement);
-		boolean result = repo.AddCar(car);
-		return result;
+	public boolean AddCar(Car car) {
+		return repo.AddCar(car);
 		
 	}
-	public boolean RemoveCar(Car car) {
+	public boolean RemoveCar(String licensePlate) {
+		Car car = repo.SearchByLicensePlate(licensePlate);
 		return repo.RemoveCar(car);
 	}
-	public ArrayList<Car> GetAllCars(){
+	public List<Car> GetAllCars(){
 		return repo.getAllCars();
 	}
 	public Car getCarByPlate(String licensePlate) {
