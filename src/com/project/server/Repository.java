@@ -8,10 +8,10 @@ public class Repository {
 	private ArrayList<Car> Cars;
 	public Repository() {
 		Cars =new ArrayList<Car>();
-		Car Samplecar= new Car("1","2","3",4,5);
-		Car Samplecar2= new Car("2","2dsf","3a",4,5);
-		Car Samplecar3= new Car("3","2sa","dsadsad3",4,5);
-		Car Samplecar4= new Car("4","2ds","3dsdas",4,5);
+		Car Samplecar= new Car("12345","Make","Model",1300,2);
+		Car Samplecar2= new Car("fffff","Make2","Model2",1400,3);
+		Car Samplecar3= new Car("ggggg","Honda","Civic",1200,2);
+		Car Samplecar4= new Car("hhhhh","Mazda","MX5",1300,2);
 		Cars.add(Samplecar);
 		Cars.add(Samplecar2);
 		Cars.add(Samplecar3);
