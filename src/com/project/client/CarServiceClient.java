@@ -22,14 +22,19 @@ public class CarServiceClient {
 	public static void LoadOptions() {
 		try {
 			System.out.println(
-					"Select an option: 1 - Search By Car NumberPlate, 2 - Get All Cars");
+					"Select an option: 1 - Add a car, 2 - Remove a Car, 3 - Search By Car NumberPlate, 4 - Get All Cars");
 			String input = reader.readLine();
 			switch (input) {
-			
 			case "1":
-				Search();
+				AddCar();
 				break;
 			case "2":
+				RemoveCar();
+				break;
+			case "3":
+				Search();
+				break;
+			case "4":
 				GetAllCars();
 				break;
 			default:
@@ -90,6 +95,57 @@ public class CarServiceClient {
 
 	}
 
+	private static void RemoveCar() {
+		try {
+			String LicensePlate;
+			System.out.println("Enter License Plate");
+			LicensePlate = ValidateStrings(reader.readLine(), "License Plate");
+			CarServiceStub stub = new CarServiceStub();
+			RemoveCar request = new RemoveCar();
+			request.setLicensePlate(LicensePlate);
+			RemoveCarResponse response = stub.removeCar(request);
+			System.out.println("Response: "+response.get_return());
+			LoadOptions();
+		}
+
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void AddCar() {
+		try {
+			String LicensePlate;
+			String Make;
+			String Model;
+			int Weight;
+			int Displacement;
+			System.out.println("Enter License Plate");
+			LicensePlate = ValidateStrings(reader.readLine(), "License Plate");
+			System.out.println("Enter Make");
+			Make = ValidateStrings(reader.readLine(), "Make");
+			System.out.println("Enter Model");
+			Model = ValidateStrings(reader.readLine(), "Model");
+			System.out.println("Enter Weight");
+			Weight = ValidateInts(reader.readLine(), "Weight");
+			System.out.println("Enter Displacement");
+			Displacement = ValidateInts(reader.readLine(), "Displacement");
+			System.out.println(LicensePlate + Make + Model + String.valueOf(Weight) + String.valueOf(Displacement));
+			CarServiceStub stub = new CarServiceStub();
+			AddCar request = new AddCar();
+			request.setDisplacement(Displacement);
+			request.setRegistrationPlate(LicensePlate);
+			request.setMake(Make);
+			request.setModel(Model);
+			request.setWeight(Weight);
+			AddCarResponse response = stub.addCar(request);
+			System.out.println("Result: " + response.get_return());
+			LoadOptions();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	public static String ValidateStrings(String input, String name) {
 		String result = null;
